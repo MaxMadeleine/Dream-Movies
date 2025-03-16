@@ -1,0 +1,54 @@
+.HeaderBackground {
+  position: relative;
+  overflow: hidden;
+  font-family: "Exo", "sans-serif";
+  width: 85%;
+  height: 40vh;
+  margin: 7rem auto 0 auto;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 1920px;
+
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+  }
+
+  .HeaderContent {
+    // border: 2px solid red;
+    height: 100%;
+    position: relative; // Content stays above video
+    z-index: 2; // Higher z-index than video
+    text-align: center;
+    color: white;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 350;
+      padding: 1rem;
+      padding-top: 1.5rem;
+
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin: 10px 0 0;
+    }
+
+    #Unlimited {
+      font-weight: 500;
+      font-size: 2.5rem;
+
+    }
+
+    #top {
+      padding-top: 2rem;
+    }
+  }
+}

@@ -3,6 +3,7 @@ require('dotenv').config();
 //npm install -D sass-embedded
 // npm install styled-components
 //npm install @supabase/supabase-js
+//npm i dotenv
 //
 // Developer branch
 import { StrictMode } from 'react'

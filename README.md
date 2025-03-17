@@ -7,7 +7,7 @@ This project is a web application for displaying and managing movie posters. It 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/Nordisk-Film.git
+   git clone https://github.com/your-username/Nordisk-Film.git](https://github.com/MaxMadeleine/Dream-Movies.git
    cd Nordisk-Film
 
 2. Install the dependencies:

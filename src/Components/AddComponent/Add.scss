@@ -1,0 +1,116 @@
+// BMW-inspired dark blue theme
+$bmw-dark-blue: #0a55b9;
+$bmw-white: #ffffff;
+$bmw-black: #000000;
+
+
+
+section {
+  margin: 4rem auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-family: "BMW Type Next", Arial, sans-serif;
+
+
+  a {
+    color: $bmw-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba($bmw-dark-blue, 0.2);
+      color: $bmw-dark-blue;
+    }
+  }
+}
+.form {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 30px;
+  background: linear-gradient(145deg, $bmw-dark-blue, darken($bmw-dark-blue, 10%));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  font-family: "BMW Type Next", Arial, sans-serif;
+
+  
+  h1 {
+    color: $bmw-white;
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 2px solid $bmw-white;
+    padding-bottom: 15px;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    background-color: rgba($bmw-white, 1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: $bmw-white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: $bmw-white;
+      box-shadow: 0 0 0 2px rgba($bmw-white, 0.3);
+    }
+    
+    &::placeholder {
+      color: $bmw-black;
+      opacity: 0.7;
+    }
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: $bmw-white;
+    color: lighten($bmw-black, 35%);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    
+    &:hover {
+      background-color: lighten($bmw-white, 5%);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+
+// Optional: Add these styles for a responsive design
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+    
+    h1 {
+      font-size: 24px;
+    }
+  }
+}

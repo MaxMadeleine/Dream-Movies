@@ -10,6 +10,7 @@ export const ThreeRandom = () => {
       const { data, error } = await supabase
         .from("posters")
         .select("id, name, image_url");
+        
       if (error) {
         console.error("Error fetching ThreeRandom", error);
       } else {

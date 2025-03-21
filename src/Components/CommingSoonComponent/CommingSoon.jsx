@@ -11,6 +11,7 @@ export const CommingSoon = ({ setComingSoonIds }) => {
     let query = supabase
       .from("posters")
       .select("id,name,image_url");
+      
 
     const { data, error } = await query;
 

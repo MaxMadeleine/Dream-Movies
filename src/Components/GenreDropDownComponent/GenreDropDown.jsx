@@ -17,11 +17,8 @@ export const GenreDropDown = ({ setSelectedGenre }) => {
     };
 
     useEffect(() => {
-    
         getData();    
-                    
     }, []);
-
 
     const handleChange = (event) => {
         setSelectedGenre(event.target.value);

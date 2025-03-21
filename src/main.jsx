@@ -1,4 +1,3 @@
-require('dotenv').config();
 // npm install react-router-dom
 //npm install -D sass-embedded
 // npm install styled-components

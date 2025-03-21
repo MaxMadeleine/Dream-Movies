@@ -8,6 +8,7 @@ export const PosterList = ({ selectedGenre }) => {
   const [limit, setLimit] = useState(20); 
 
   const getData = async () => {
+    const accessToken = localStorage.getItem('accessToken'); // Retrieve access token
     let query = supabase
       .from("posters")
       .select("id,name,image_url")

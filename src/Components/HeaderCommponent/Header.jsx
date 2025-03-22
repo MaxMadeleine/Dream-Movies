@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.scss';
-import HeaderVid from "../../assets/header/HeaderVid.mp4";
 
 export const Header = () => {
   return (

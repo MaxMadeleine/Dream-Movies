@@ -6,7 +6,6 @@ export const Header = () => {
   return (
     <header className="HeaderBackground">
       <video autoPlay muted loop className="background-video">
-        <source src={HeaderVid} type="video/mp4" />
       </video>
       <div className="HeaderContent">
         <h2>Poster Plus</h2>

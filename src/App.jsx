@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from "./Components/NavComponent/Nav.jsx";
 import { Header } from './Components/HeaderCommponent/Header.jsx';
-import { Main } from './Components/MainComponent/Main.jsx';
 import { Router } from './Components/RouterComponent/Router.jsx';
 import { Footer } from './Components/FooterComponent/Footer.jsx';
 
@@ -10,9 +9,7 @@ function App() {
     <>
       <Navbar />
       <Header />
-      <Main>
-        <Router />
-      </Main>
+      <Router />
       <Footer />
     </>
   );

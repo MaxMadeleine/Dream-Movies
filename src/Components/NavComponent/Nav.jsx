@@ -1,13 +1,25 @@
 import { Link, NavLink } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Nav.scss';
 import Cart from '../CartComponent/Cart.jsx';
 
 export const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        setIsLoggedIn(!!accessToken);
+    }, []);
 
     const toggleCart = () => {
         setIsCartOpen(!isCartOpen);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        setIsLoggedIn(false);
+        window.location.reload();
     };
 
     return (
@@ -19,18 +31,26 @@ export const Navbar = () => {
                     <li><NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
                     <li><NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink></li>
                     <li><NavLink to="/crud" className={({ isActive }) => isActive ? "active" : ""}>CRUD</NavLink></li>
-
                 </ul>
                 <div id="logo-container">
                     <NavLink to="/"><img src="./src/assets/logo/Logo.svg" alt="" /> </NavLink>
                 </div>
                 <ul id="link-right">
-                    <li><Link to="/login">Log In <img src="./src/assets/images/AccountLogo.svg" alt="Account logo" /></Link></li>
-                    <li><Link to="/signup">Sign Up <img src="./src/assets/images/AccountLogo.svg" alt="Account logo" /></Link></li>
-                    <li><Link to="#" onClick={toggleCart}>Basket <img src="src/assets/images/CartLogo.svg" alt="Cart Logo" /></Link></li>
+                    {isLoggedIn ? (
+                        <>
+                            <li><Link to="/profile">Profile <img src="./src/assets/images/AccountLogo.svg" alt="Account logo" /></Link></li>
+                            <li><Link to="#" onClick={handleLogout}>Logout</Link></li>
+                            <li><Link to="#" onClick={toggleCart}>Basket <img src="src/assets/images/CartLogo.svg" alt="Cart Logo" /></Link></li>
+                        </>
+                    ) : (
+                        <>
+                            <li><Link to="/login">Log In <img src="./src/assets/images/AccountLogo.svg" alt="Account logo" /></Link></li>
+                            <li><Link to="/signup">Sign Up <img src="./src/assets/images/AccountLogo.svg" alt="Account logo" /></Link></li>
+                        </>
+                    )}
                 </ul>
             </nav>
-            <Cart isOpen={isCartOpen} toggleCart={toggleCart} />
+            {isLoggedIn && <Cart isOpen={isCartOpen} toggleCart={toggleCart} />}
         </>
     )
 };
